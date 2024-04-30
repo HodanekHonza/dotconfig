@@ -1,0 +1,37 @@
+* {
+  border-radius: 10px;
+  color: #ffffff;
+  border: none;
+}
+window {
+  font-size: 28px;
+  font-family: "JetBrainsMono NF ExtraLight";
+  background-color: rgba(50,50,50, 0.9);
+  border-bottom: 3px solid white;
+}
+
+#entry {
+ padding: 0.25em;
+ color: white;
+}
+#entry:selected {
+  background-color: #bbccdd;
+  background: linear-gradient(90deg, #bbffdd, #dd77ff);
+}
+#text {
+  color: #ffffff;
+}
+
+#text:selected {
+  color: #000;
+}
+#input {
+  background-color: rgba(50,50,50,0.9);
+  color: white;
+  padding: 0.25em;
+}
+
+image {
+  margin-left: .25em;
+  margin-right: .25em;
+}
