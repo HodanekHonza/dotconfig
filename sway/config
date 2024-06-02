@@ -14,12 +14,15 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu wofi --show drun  
 
+#sway lag fix
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec systemctl --user import-environment
 ### Output configuration
 #
 # removing default borders
@@ -27,10 +30,10 @@ default_border none
 default_floating_border none
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/jan/Pictures/backgrounds/castle.jpg fill
+output * bg /home/jan/Pictures/forest.jpg fill
 #
 # Example configuration:
-font pango:"JetBrains Mono NL Ultra-Light" 10
+font pango:"JetBrains 0XProto Nerd Font Regular" 14
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
@@ -60,13 +63,13 @@ font pango:"JetBrains Mono NL Ultra-Light" 10
 #       middle_emulation enabled
 #   }
 #why no work
-input "ETPS/2 Elantech TrackPad" {
-    left_handed enabled
+	input "2:10:TPPS/2_IBM_TrackPoint" {
+    left_handed disabled
     tap enabled
-    natural_scroll enabled
+    natural_scroll disabled
     dwt enabled
     accel_profile "flat" 
-    pointer_accel 1 
+    pointer_accel 0.5 
 }
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
@@ -229,8 +232,8 @@ bindsym XF86MonBrightnessUp exec "brightnessctl set +5%"
 # enviroment Variables
 #exec export PATH="$PATH:/jan/Desktop/Apps/obsidian"
 
-gaps outer 2
-gaps inner 5
+#gaps outer 2
+#gaps inner 5
 #
 # Status Bar:
 #
